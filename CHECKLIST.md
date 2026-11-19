@@ -23,15 +23,15 @@
 | 상태 | 항목 | 근거 |
 |---|---|---|
 | ✅ | GitHub 저장소 URL | https://github.com/jihyuntesting-boop/prompt-manager |
-| ❌ | 개발 환경 설정 스크린샷 (**VSCode**, Python 버전, Git 설정) | Python/Git 버전과 설정은 `docs/screenshots/01-environment.png`(클라우드 터미널)로 대체. **VSCode 화면은 사용자 PC에서 직접 캡처 필요** |
-| ⚠️ | 프로그램 실행 결과 스크린샷 | 클라우드 터미널 출력 이미지 02, 03, 07. 사용자 PC에서 실행한 화면이 필요하면 다시 캡처 |
-| ⚠️ | `git log --oneline --graph` 스크린샷 | `docs/screenshots/04-git-log-graph.png` (촬영 시점까지). 사용자 PC에서 clone 후 캡처하면 더 좋음 |
+| ✅ | 개발 환경 설정 스크린샷 (VSCode, Python 버전, Git 설정) | 맥 VSCode 화면: `09`~`12` (아래 표 참고) |
+| ✅ | 프로그램 실행 결과 스크린샷 | 맥 VSCode 터미널 실행 화면 `13`, 클라우드 터미널 출력 02, 03, 07 |
+| ✅ | `git log --oneline --graph` 스크린샷 | 맥 VSCode 화면 `09`, `10` (전체 기록, 병합선 포함) |
 
 ## 3. 과제 목표 (스스로 설명할 수 있어야 함)
 
 | 상태 | 항목 | 근거 |
 |---|---|---|
-| ❌ | VSCode에서 Python 파일을 만들고 실행 | 사용자 PC에서 직접 수행 |
+| ⚠️ | VSCode에서 Python 파일을 만들고 실행 | VSCode 터미널에서 `python3 main.py` 실행 확인(`13`). 새 `.py` 파일을 직접 만들어 실행해 보는 연습은 본인이 해보면 좋음 |
 | ✅ | 터미널에서 Python/Git 버전 확인과 설정 점검 | 스크린샷 01 |
 | ✅ | 파이썬 기초 문법 설명 자료 | `docs/concepts.md` |
 | ✅ | Git이 무엇이고 왜 필요한지 설명 자료 | `docs/concepts.md` |
@@ -47,14 +47,14 @@
 
 | 상태 | 항목 | 근거 |
 |---|---|---|
-| ❌ | VSCode에 Python 확장 설치 | 사용자 PC에서 수행 |
-| ❌ | VSCode Korean Language Pack 설치 (선택) | 사용자 PC에서 수행 |
+| ✅ | VSCode에 Python 확장 설치 | `10` (Python, Pylance, Python Debugger, Python Environments 설치됨) |
+| ✅ | VSCode Korean Language Pack 설치 (선택) | `10` (Korean Language Pack for Visual Studio Code) |
 | ✅ | Python 3.10 이상 확인 | 스크린샷 01 (Python 3.13) |
 | ✅ | `print("Hello")` 실행 | 스크린샷 01 |
 | ✅ | Git 버전 확인 | 스크린샷 01 |
-| ⚠️ | Git 사용자 정보(이름, 이메일) 설정 | 이 저장소에 로컬로 설정함. **사용자 PC의 Git에는 별도 설정 필요** |
-| ⚠️ | 기본 브랜치 이름 main | 이 저장소는 `main` 사용, `init.defaultBranch=main` 설정함. 사용자 PC는 `git config --global init.defaultBranch main` |
-| ❌ | VSCode에서 GitHub 로그인과 연동 확인 | 사용자 PC에서 수행 |
+| ✅ | Git 사용자 정보(이름, 이메일) 설정 | `11` (이메일은 공개 저장소라 가림 처리) |
+| ✅ | 기본 브랜치 이름 main | `11` (`init.defaultBranch=main`) |
+| ✅ | VSCode에서 GitHub 로그인과 연동 확인 | `12` (계정 메뉴에 `jihyuntesting-boop (GitHub)` 표시) |
 
 ### 4-2. Git 저장소 설정 및 초기화
 
@@ -151,16 +151,14 @@
 | ✅ | 브랜치 생성 및 병합을 로컬 checkout, merge로 수행 | 스크린샷 04 |
 | ✅ | 이전 미션 프롬프트 3개 이상을 기본 데이터로 등록 | 위와 동일 (6개) |
 
-## 남은 할 일 (사용자 맥에서)
+## 맥(VSCode)에서 캡처한 제출용 화면
 
-VSCode와 PC의 Git 설정은 이 클라우드 환경에서 만질 수 없어 맥 터미널에서 해야 합니다. 설치와 설정은 스크립트 한 번으로 끝나도록 준비했습니다. (이 환경은 Linux라서 `code`가 없는 경로와 Git 설정 부분만 실행해 확인했고, VSCode 확장 설치 부분은 **실행해 보지 못했습니다**)
+| 번호 | 내용 |
+|---|---|
+| [09](docs/screenshots/09-vscode-git-log-graph.jpg) | VSCode 터미널의 `git log --oneline --graph` 전체 기록 |
+| [10](docs/screenshots/10-vscode-extensions.jpg) | Python 확장과 Korean Language Pack 설치 확인 |
+| [11](docs/screenshots/11-vscode-versions-git-config.png) | Python/Git 버전과 Git 설정 (이메일 가림 처리) |
+| [12](docs/screenshots/12-vscode-github-login.png) | VSCode GitHub 로그인 확인 |
+| [13](docs/screenshots/13-macos-program-run.jpg) | `python3 main.py` 실행 (메뉴, 목록, 추가, 빈 입력 재요청) |
 
-```bash
-git clone https://github.com/jihyuntesting-boop/prompt-manager
-cd prompt-manager
-bash scripts/setup-mac.sh "GitHub사용자명" "GitHub에 등록한 이메일"
-```
-
-1. 위 스크립트로 Python 확장, Korean Language Pack 설치와 Git 사용자 정보, 기본 브랜치 설정을 한 번에 처리
-2. VSCode 왼쪽 아래 계정 아이콘에서 GitHub 로그인(브라우저 승인 필요), 로그인된 화면 캡처
-3. `python3 main.py` 실행 화면과 `git log --oneline --graph` 화면 캡처 (클라우드 터미널 이미지 대신 맥 화면을 내려면)
+공개 저장소에 올린 11, 12번은 이메일이 보이는 부분을 가렸습니다. 과목 제출용으로는 가리지 않은 원본을 써도 됩니다.
