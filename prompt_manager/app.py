@@ -6,7 +6,9 @@ from prompt_manager.features import (
     search_prompt,
     show_by_category,
     show_detail,
+    show_favorites,
     show_list,
+    toggle_favorite,
 )
 from prompt_manager.ui import show_menu
 
@@ -20,6 +22,8 @@ def run():
         "3": show_by_category,
         "4": search_prompt,
         "5": show_detail,
+        "6": toggle_favorite,
+        "7": show_favorites,
     }
 
     while True:
