@@ -85,3 +85,15 @@ prompt-manager/
 
 - 기능 하나를 완성할 때마다 커밋했습니다. (feat, fix, docs, test, chore 접두어 사용)
 - `feature/prompt-list` 브랜치에서 목록 기능을 개발한 뒤 `main`으로 병합했습니다.
+
+## 제출 자료 (스크린샷)
+
+아래 이미지는 클라우드 Linux 환경의 터미널에서 실제로 실행한 출력을 캡처한 것입니다. VSCode 화면이 아니며, `git log` 이미지는 커밋 `8f6879c` 시점의 결과입니다.
+
+| 항목 | 파일 |
+|---|---|
+| Python/Git 버전, Git 설정 | [01-environment.png](docs/screenshots/01-environment.png) |
+| 메뉴, 프롬프트 추가, 목록 | [02-run-add-list.png](docs/screenshots/02-run-add-list.png) |
+| 카테고리별 조회, 검색, 상세 보기, 즐겨찾기 | [03-run-category-search-detail-favorites.png](docs/screenshots/03-run-category-search-detail-favorites.png) |
+| `git log --oneline --graph` | [04-git-log-graph.png](docs/screenshots/04-git-log-graph.png) |
+| 원격 저장소와 브랜치 | [05-remote-branches.png](docs/screenshots/05-remote-branches.png) |
