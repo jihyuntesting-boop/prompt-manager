@@ -72,10 +72,14 @@ prompt-manager/
 ├── docs/
 │   ├── concepts.md          # Python/Git 개념 정리
 │   └── screenshots/         # 제출용 스크린샷
+├── scripts/
+│   └── setup-windows.ps1    # Windows 개발 환경 설정 (Git 설정, VSCode 확장)
 ├── CHECKLIST.md             # 과제 요구사항 체크리스트
 ├── .gitignore
 └── README.md
 ```
+
+기본으로 등록되는 프롬프트 6개는 이전 미션(회의록 요약 프로젝트, 저장소 `B1-1.ChatGPT-`)에서 작성한 것입니다.
 
 ## 프롬프트 데이터 구조
 
