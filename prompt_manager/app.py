@@ -1,7 +1,7 @@
 """메인 메뉴 루프."""
 
 from prompt_manager.data import get_default_prompts
-from prompt_manager.features import add_prompt, show_by_category, show_list
+from prompt_manager.features import add_prompt, search_prompt, show_by_category, show_list
 from prompt_manager.ui import show_menu
 
 
@@ -12,6 +12,7 @@ def run():
         "1": add_prompt,
         "2": show_list,
         "3": show_by_category,
+        "4": search_prompt,
     }
 
     while True:

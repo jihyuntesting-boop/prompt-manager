@@ -46,3 +46,27 @@ def show_by_category(prompts):
     for number, prompt in results:
         print(format_prompt_line(number, prompt))
     print(f"\n총 {len(results)}개의 프롬프트")
+
+
+def find_prompts(prompts, keyword):
+    """제목 또는 내용에 키워드가 포함된 (전체 번호, 프롬프트) 목록을 반환한다."""
+    keyword = keyword.lower()
+    return [
+        (number, prompt)
+        for number, prompt in enumerate(prompts, start=1)
+        if keyword in prompt["title"].lower() or keyword in prompt["content"].lower()
+    ]
+
+
+def search_prompt(prompts):
+    """키워드를 입력받아 검색 결과를 출력한다."""
+    print("\n=== 프롬프트 검색 ===")
+    keyword = read_nonempty("검색어: ")
+    results = find_prompts(prompts, keyword)
+    if not results:
+        print("\n검색 결과가 없습니다.")
+        return
+    print("\n검색 결과:")
+    for number, prompt in results:
+        print(format_prompt_line(number, prompt))
+    print(f"\n{len(results)}개의 프롬프트를 찾았습니다.")
