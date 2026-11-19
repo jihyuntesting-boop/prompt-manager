@@ -24,14 +24,14 @@
 |---|---|---|
 | ✅ | GitHub 저장소 URL | https://github.com/jihyuntesting-boop/prompt-manager |
 | ✅ | 개발 환경 설정 스크린샷 (VSCode, Python 버전, Git 설정) | 맥 VSCode 화면: `09`~`12` (아래 표 참고) |
-| ✅ | 프로그램 실행 결과 스크린샷 | 맥 VSCode 터미널 실행 화면 `13`, 클라우드 터미널 출력 02, 03, 07 |
+| ✅ | 프로그램 실행 결과 스크린샷 | 맥 VSCode 터미널 실행 화면 `14`, `15` (메뉴, 추가, 목록 7개, 검색, 종료), 클라우드 터미널 출력 02, 03, 07 |
 | ✅ | `git log --oneline --graph` 스크린샷 | 맥 VSCode 화면 `09`, `10` (전체 기록, 병합선 포함) |
 
 ## 3. 과제 목표 (스스로 설명할 수 있어야 함)
 
 | 상태 | 항목 | 근거 |
 |---|---|---|
-| ⚠️ | VSCode에서 Python 파일을 만들고 실행 | VSCode 터미널에서 `python3 main.py` 실행 확인(`13`). 새 `.py` 파일을 직접 만들어 실행해 보는 연습은 본인이 해보면 좋음 |
+| ⚠️ | VSCode에서 Python 파일을 만들고 실행 | VSCode 터미널에서 `python3 main.py` 실행 확인(`14`, `15`). 새 `.py` 파일을 직접 만들어 실행해 보는 연습은 본인이 해보면 좋음 |
 | ✅ | 터미널에서 Python/Git 버전 확인과 설정 점검 | 스크린샷 01 |
 | ✅ | 파이썬 기초 문법 설명 자료 | `docs/concepts.md` |
 | ✅ | Git이 무엇이고 왜 필요한지 설명 자료 | `docs/concepts.md` |
@@ -160,5 +160,7 @@
 | [11](docs/screenshots/11-vscode-versions-git-config.png) | Python/Git 버전과 Git 설정 (이메일 가림 처리) |
 | [12](docs/screenshots/12-vscode-github-login.png) | VSCode GitHub 로그인 확인 |
 | [13](docs/screenshots/13-macos-program-run.jpg) | `python3 main.py` 실행 (메뉴, 목록, 추가, 빈 입력 재요청) |
+| [14](docs/screenshots/14-macos-run-menu-add-list.jpg) | 메뉴, 프롬프트 추가(이메일 작성 도우미), 목록 |
+| [15](docs/screenshots/15-macos-run-add-list-search-exit.jpg) | 추가 결과(7개), 검색(`미노`), 종료 |
 
 공개 저장소에 올린 11, 12번은 이메일이 보이는 부분을 가렸습니다. 과목 제출용으로는 가리지 않은 원본을 써도 됩니다.

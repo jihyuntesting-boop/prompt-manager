@@ -105,7 +105,7 @@ prompt-manager/
 
 ## 제출 자료 (스크린샷)
 
-01~08번 이미지는 클라우드 Linux 환경의 터미널 출력이고, 09~13번은 맥의 VSCode에서 직접 캡처한 화면입니다. 01~08번은 VSCode 화면이 아니며, `git log` 이미지는 촬영 시점까지의 커밋 기록입니다.
+01~08번 이미지는 클라우드 Linux 환경의 터미널 출력이고, 09~15번은 맥의 VSCode에서 직접 캡처한 화면입니다. 01~08번은 VSCode 화면이 아니며, `git log` 이미지는 촬영 시점까지의 커밋 기록입니다.
 
 | 항목 | 파일 |
 |---|---|
@@ -121,4 +121,6 @@ prompt-manager/
 | 맥 VSCode: 확장 설치 | [10-vscode-extensions.jpg](docs/screenshots/10-vscode-extensions.jpg) |
 | 맥 VSCode: 버전과 Git 설정 | [11-vscode-versions-git-config.png](docs/screenshots/11-vscode-versions-git-config.png) |
 | 맥 VSCode: GitHub 로그인 | [12-vscode-github-login.png](docs/screenshots/12-vscode-github-login.png) |
-| 맥 터미널: 프로그램 실행 | [13-macos-program-run.jpg](docs/screenshots/13-macos-program-run.jpg) |
+| 맥 터미널: 프로그램 실행 (입력 시행착오 포함) | [13-macos-program-run.jpg](docs/screenshots/13-macos-program-run.jpg) |
+| 맥 터미널: 메뉴, 목록, 프롬프트 추가 | [14-macos-run-menu-add-list.jpg](docs/screenshots/14-macos-run-menu-add-list.jpg) |
+| 맥 터미널: 추가 결과(7개), 검색, 종료 | [15-macos-run-add-list-search-exit.jpg](docs/screenshots/15-macos-run-add-list-search-exit.jpg) |
