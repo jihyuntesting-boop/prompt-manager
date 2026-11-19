@@ -11,7 +11,7 @@
 | ✅ | 메뉴 번호로 기능을 선택하는 콘솔 프로그램 | `python main.py`, 스크린샷 02 |
 | ✅ | 추가, 목록, 카테고리별 조회, 검색, 상세 보기, 즐겨찾기 동작 | 스크린샷 02, 03 |
 | ✅ | 실행 중 추가한 프롬프트와 즐겨찾기 유지, 종료 시 초기화 | 메모리 리스트만 사용. 8번 메뉴로 직접 저장할 때만 파일 생성 |
-| ⚠️ | 이전 미션 프롬프트 3개 이상을 기본 데이터로 등록 | 기본 데이터 5개는 등록됨. 단, 작성자가 만든 **예시**이며 실제 이전 미션 프롬프트로 교체 필요 (`prompt_manager/data.py`) |
+| ✅ | 이전 미션 프롬프트 3개 이상을 기본 데이터로 등록 | 이전 미션 저장소 `B1-1.ChatGPT-`(회의록 요약 프로젝트)의 프롬프트 6개를 등록 (`prompt_manager/data.py`) |
 | ✅ | 프로젝트 코드가 GitHub에 업로드됨 | 위 저장소 URL |
 | ✅ | 기능 단위 커밋 10개 이상 | `git rev-list --count main` (수십 개), 스크린샷 04 |
 | ✅ | 브랜치 생성 및 병합 기록 | `feature/prompt-list`, `feature/bonus-storage`, `feature/bonus-crud`를 `checkout -b`로 만들고 `merge --no-ff`로 병합 |
@@ -81,7 +81,7 @@
 
 | 상태 | 항목 | 근거 |
 |---|---|---|
-| ⚠️ | 이전 미션 프롬프트 3개 이상 미리 등록 | 위 1번 항목과 동일. 5개 등록, 예시 내용 |
+| ✅ | 이전 미션 프롬프트 3개 이상 미리 등록 | 6개 등록 (회의록 정리 v1, 입력 템플릿, 미노 페르소나 v2, few-shot 예시, 임원 보고용 변환, 모델 비교용 입력) |
 | ✅ | 리스트와 딕셔너리로 저장 | `data.py`의 `create_prompt`, `get_default_prompts` |
 | ✅ | 제목, 내용, 카테고리, 즐겨찾기 여부 포함 | `tests/test_features.py` (보너스로 `views` 추가) |
 | ✅ | 카테고리 예시 6종 | `CATEGORIES` |
@@ -149,11 +149,18 @@
 | ✅ | 10개 이상의 의미 있는 커밋 | `feat`, `fix`, `docs`, `test`, `chore` 접두어로 변경 의도를 설명 |
 | ✅ | init, add, commit, push, pull, checkout, clone, merge 각 1회 이상 | init(저장소 생성), add/commit(전체 이력), push(원격 반영), pull(`Already up to date` 확인), checkout(브랜치 생성/이동), clone(샘플 저장소), merge(`--no-ff` 병합 3회) |
 | ✅ | 브랜치 생성 및 병합을 로컬 checkout, merge로 수행 | 스크린샷 04 |
-| ⚠️ | 이전 미션 프롬프트 3개 이상을 기본 데이터로 등록 | 위와 동일: 실제 프롬프트로 교체 필요 |
+| ✅ | 이전 미션 프롬프트 3개 이상을 기본 데이터로 등록 | 위와 동일 (6개) |
 
 ## 남은 할 일 (사용자 PC에서)
 
-1. VSCode에 Python 확장(과 선택으로 Korean Language Pack) 설치, GitHub 로그인 후 연동 확인, 해당 화면 캡처
-2. 사용자 PC에서 `git config --global user.name`, `user.email`, `init.defaultBranch main` 설정 후 캡처
-3. 저장소를 clone해 `python main.py` 실행 화면과 `git log --oneline --graph` 화면 캡처 (원하면 클라우드 터미널 이미지 대신 사용)
-4. `prompt_manager/data.py`의 기본 프롬프트를 실제 이전 미션 프롬프트로 교체 (내용을 알려 주면 대신 반영 가능)
+VSCode와 PC의 Git 설정은 이 클라우드 환경에서 만질 수 없어 PC에서 해야 합니다. 설치와 설정은 스크립트 한 번으로 끝나도록 준비했습니다. (Windows PowerShell, 이 환경에는 PowerShell이 없어 **스크립트는 실행해 보지 못했습니다**)
+
+```powershell
+git clone https://github.com/jihyuntesting-boop/prompt-manager
+cd prompt-manager
+.\scripts\setup-windows.ps1 -Name "GitHub사용자명" -Email "GitHub에 등록한 이메일"
+```
+
+1. 위 스크립트로 Python 확장, Korean Language Pack 설치와 Git 사용자 정보, 기본 브랜치 설정을 한 번에 처리
+2. VSCode 왼쪽 아래 계정 아이콘에서 GitHub 로그인(브라우저 승인 필요), 로그인된 화면 캡처
+3. `python main.py` 실행 화면과 `git log --oneline --graph` 화면 캡처 (클라우드 터미널 이미지 대신 PC 화면을 내려면)
