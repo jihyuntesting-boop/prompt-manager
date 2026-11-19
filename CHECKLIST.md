@@ -31,7 +31,7 @@
 
 | 상태 | 항목 | 근거 |
 |---|---|---|
-| ⚠️ | VSCode에서 Python 파일을 만들고 실행 | VSCode 터미널에서 `python3 main.py` 실행 확인(`14`, `15`). 새 `.py` 파일을 직접 만들어 실행해 보는 연습은 본인이 해보면 좋음 |
+| ✅ | VSCode에서 Python 파일을 만들고 실행 | VSCode에서 `hello.py`를 만들어 `print("Hello")` 실행 (`16`), `main.py` 실행 (`14`, `15`) |
 | ✅ | 터미널에서 Python/Git 버전 확인과 설정 점검 | 스크린샷 01 |
 | ✅ | 파이썬 기초 문법 설명 자료 | `docs/concepts.md` |
 | ✅ | Git이 무엇이고 왜 필요한지 설명 자료 | `docs/concepts.md` |
@@ -162,5 +162,6 @@
 | [13](docs/screenshots/13-macos-program-run.jpg) | `python3 main.py` 실행 (메뉴, 목록, 추가, 빈 입력 재요청) |
 | [14](docs/screenshots/14-macos-run-menu-add-list.jpg) | 메뉴, 프롬프트 추가(이메일 작성 도우미), 목록 |
 | [15](docs/screenshots/15-macos-run-add-list-search-exit.jpg) | 추가 결과(7개), 검색(`미노`), 종료 |
+| [16](docs/screenshots/16-vscode-hello-py.jpg) | VSCode에서 `hello.py` 생성과 실행 (`Hello` 출력) |
 
 공개 저장소에 올린 11, 12번은 이메일이 보이는 부분을 가렸습니다. 과목 제출용으로는 가리지 않은 원본을 써도 됩니다.
