@@ -23,3 +23,26 @@ def show_list(prompts):
     for number, prompt in enumerate(prompts, start=1):
         print(format_prompt_line(number, prompt))
     print(f"\n총 {len(prompts)}개의 프롬프트")
+
+
+def filter_by_category(prompts, category):
+    """해당 카테고리의 (전체 번호, 프롬프트) 목록을 반환한다."""
+    return [
+        (number, prompt)
+        for number, prompt in enumerate(prompts, start=1)
+        if prompt["category"] == category
+    ]
+
+
+def show_by_category(prompts):
+    """카테고리를 고르면 해당 카테고리의 프롬프트만 출력한다."""
+    print("\n=== 카테고리별 조회 ===")
+    category = choose_category()
+    results = filter_by_category(prompts, category)
+    if not results:
+        print(f"\n[{category}] 카테고리에 등록된 프롬프트가 없습니다.")
+        return
+    print(f"\n[{category}] 카테고리 프롬프트:")
+    for number, prompt in results:
+        print(format_prompt_line(number, prompt))
+    print(f"\n총 {len(results)}개의 프롬프트")
