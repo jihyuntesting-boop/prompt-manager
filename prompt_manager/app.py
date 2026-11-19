@@ -1,6 +1,6 @@
 """메인 메뉴 루프."""
 
-from prompt_manager.bonus import manage_storage
+from prompt_manager.bonus import manage_storage, show_top
 from prompt_manager.data import get_default_prompts
 from prompt_manager.features import (
     add_prompt,
@@ -26,6 +26,7 @@ def run():
         "6": toggle_favorite,
         "7": show_favorites,
         "8": manage_storage,
+        "10": show_top,
     }
 
     while True:
