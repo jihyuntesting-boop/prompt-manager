@@ -21,15 +21,17 @@ class FilterAndSearchTest(unittest.TestCase):
         self.prompts = get_default_prompts()
 
     def test_filter_by_category_keeps_global_number(self):
-        results = filter_by_category(self.prompts, "영상 생성")
+        results = filter_by_category(self.prompts, "페르소나")
         self.assertEqual([number for number, _ in results], [3])
 
     def test_filter_empty_category(self):
-        self.assertEqual(filter_by_category(self.prompts, "기타"), [])
+        self.assertEqual(filter_by_category(self.prompts, "영상 생성"), [])
 
     def test_find_prompts_matches_title_or_content_case_insensitive(self):
-        self.assertEqual(len(find_prompts(self.prompts, "블로그")), 1)
-        self.assertEqual(len(find_prompts(self.prompts, "seo")), 1)
+        self.assertEqual([n for n, _ in find_prompts(self.prompts, "미노")], [3])
+        lower = find_prompts(self.prompts, "action items")
+        self.assertGreaterEqual(len(lower), 1)
+        self.assertEqual(lower, find_prompts(self.prompts, "ACTION ITEMS"))
 
     def test_find_prompts_no_result(self):
         self.assertEqual(find_prompts(self.prompts, "존재하지않는검색어"), [])

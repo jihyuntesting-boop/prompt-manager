@@ -29,7 +29,7 @@ class StorageTest(unittest.TestCase):
             paths = export_markdown(prompts, tmp)
             self.assertEqual(len(paths), len({p["category"] for p in prompts}))
             text = (Path(tmp) / "텍스트 생성.md").read_text(encoding="utf-8")
-            self.assertIn("블로그 글 작성 도우미 ⭐", text)
+            self.assertIn("회의록 정리 요청 (v1) ⭐", text)
 
 
 if __name__ == "__main__":
