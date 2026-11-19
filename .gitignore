@@ -9,3 +9,7 @@ venv/
 .vscode/
 .idea/
 .DS_Store
+
+# 보너스 기능이 만드는 파일
+data/
+exports/

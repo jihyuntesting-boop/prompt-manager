@@ -3,13 +3,14 @@
 CATEGORIES = ["텍스트 생성", "이미지 생성", "영상 생성", "페르소나", "자동화", "기타"]
 
 
-def create_prompt(title, content, category, favorite=False):
-    """프롬프트 1개를 딕셔너리로 만든다."""
+def create_prompt(title, content, category, favorite=False, views=0):
+    """프롬프트 1개를 딕셔너리로 만든다. views는 상세 보기 횟수(보너스)."""
     return {
         "title": title,
         "content": content,
         "category": category,
         "favorite": favorite,
+        "views": views,
     }
 
 

@@ -9,7 +9,7 @@ class DefaultDataTest(unittest.TestCase):
         prompts = get_default_prompts()
         self.assertGreaterEqual(len(prompts), 3)
         for prompt in prompts:
-            self.assertEqual(set(prompt), {"title", "content", "category", "favorite"})
+            self.assertEqual(set(prompt), {"title", "content", "category", "favorite", "views"})
             self.assertIn(prompt["category"], CATEGORIES)
 
     def test_create_prompt_defaults_favorite_false(self):
