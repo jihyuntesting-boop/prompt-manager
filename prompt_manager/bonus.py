@@ -56,3 +56,73 @@ def manage_storage(prompts):
         print("잘못된 번호입니다.")
         return
     action(prompts)
+
+
+def top_prompts(prompts, limit=5):
+    """조회수가 많은 순(같으면 번호 순)으로 (전체 번호, 프롬프트) 목록을 반환한다."""
+    numbered = list(enumerate(prompts, start=1))
+    numbered.sort(key=lambda item: (-item[1].get("views", 0), item[0]))
+    return numbered[:limit]
+
+
+def show_top(prompts):
+    """조회수 Top 목록을 출력한다."""
+    print("\n=== 조회수 Top 5 ===")
+    viewed = [(n, p) for n, p in top_prompts(prompts) if p.get("views", 0) > 0]
+    if not viewed:
+        print("아직 조회된 프롬프트가 없습니다. 상세 보기(5번)를 먼저 이용해보세요.")
+        return
+    for rank, (number, prompt) in enumerate(viewed, start=1):
+        print(f"{rank}위. (번호 {number}) {prompt['title']} - 조회수 {prompt['views']}")
+
+
+def read_index(prompts):
+    """번호를 입력받아 인덱스를 반환한다. 잘못된 입력이면 None."""
+    value = input("번호 입력: ").strip()
+    if value.isdigit() and 1 <= int(value) <= len(prompts):
+        return int(value) - 1
+    print("잘못된 번호입니다.")
+    return None
+
+
+def edit_prompt(prompts):
+    """제목, 내용, 카테고리를 수정한다. 빈 입력은 기존 값을 유지한다."""
+    index = read_index(prompts)
+    if index is None:
+        return
+    prompt = prompts[index]
+    print("(Enter만 누르면 기존 값을 유지합니다)")
+    for key, label in (("title", "제목"), ("content", "내용"), ("category", "카테고리")):
+        new_value = input(f"{label} [{prompt[key]}]: ").strip()
+        if new_value:
+            prompt[key] = new_value
+    print(f"'{prompt['title']}' 프롬프트를 수정했습니다.")
+
+
+def delete_prompt(prompts):
+    """확인 후 프롬프트를 삭제한다."""
+    index = read_index(prompts)
+    if index is None:
+        return
+    title = prompts[index]["title"]
+    answer = input(f"'{title}' 프롬프트를 삭제할까요? (y/N): ").strip().lower()
+    if answer == "y":
+        del prompts[index]
+        print("삭제했습니다.")
+    else:
+        print("삭제를 취소했습니다.")
+
+
+def manage_prompts(prompts):
+    """수정 / 삭제 하위 메뉴."""
+    print("\n=== 프롬프트 수정 / 삭제 ===")
+    print("1. 수정")
+    print("2. 삭제")
+    print("0. 돌아가기")
+    choice = input("선택: ").strip()
+    if choice == "1":
+        edit_prompt(prompts)
+    elif choice == "2":
+        delete_prompt(prompts)
+    elif choice != "0":
+        print("잘못된 번호입니다.")

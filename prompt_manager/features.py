@@ -88,11 +88,13 @@ def show_detail(prompts):
     if index is None:
         return
     prompt = prompts[index]
+    prompt["views"] = prompt.get("views", 0) + 1
     line = "─" * 28
     print(f"\n{line}")
     print(f"제목: {prompt['title']}")
     print(f"카테고리: {prompt['category']}")
     print(f"즐겨찾기: {'⭐' if prompt['favorite'] else '-'}")
+    print(f"조회수: {prompt['views']}")
     print(line)
     print("내용:")
     print(prompt["content"])
