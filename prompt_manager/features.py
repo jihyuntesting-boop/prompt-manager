@@ -70,3 +70,30 @@ def search_prompt(prompts):
     for number, prompt in results:
         print(format_prompt_line(number, prompt))
     print(f"\n{len(results)}개의 프롬프트를 찾았습니다.")
+
+
+def read_prompt_number(prompts):
+    """번호를 입력받아 prompts의 인덱스를 반환한다. 잘못된 입력이면 None."""
+    value = input("번호 입력: ").strip()
+    if value.isdigit() and 1 <= int(value) <= len(prompts):
+        return int(value) - 1
+    print("잘못된 번호입니다.")
+    return None
+
+
+def show_detail(prompts):
+    """번호로 선택한 프롬프트의 전체 내용을 출력한다."""
+    print("\n=== 프롬프트 상세 보기 ===")
+    index = read_prompt_number(prompts)
+    if index is None:
+        return
+    prompt = prompts[index]
+    line = "─" * 28
+    print(f"\n{line}")
+    print(f"제목: {prompt['title']}")
+    print(f"카테고리: {prompt['category']}")
+    print(f"즐겨찾기: {'⭐' if prompt['favorite'] else '-'}")
+    print(line)
+    print("내용:")
+    print(prompt["content"])
+    print(line)
