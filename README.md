@@ -32,11 +32,15 @@ python -m unittest discover -v
 | 5 | 프롬프트 상세 보기 | 번호를 입력하면 제목, 카테고리, 즐겨찾기 여부, 전체 내용을 보여줍니다. |
 | 6 | 즐겨찾기 관리 | 번호를 입력해 즐겨찾기를 추가/해제합니다. |
 | 7 | 즐겨찾기 목록 | 즐겨찾기한 프롬프트만 모아서 출력합니다. |
+| 8 | 저장 / 불러오기 / 내보내기 (보너스) | JSON 파일로 저장·불러오기, 카테고리별 Markdown 파일 내보내기 |
+| 9 | 수정 / 삭제 (보너스) | 제목·내용·카테고리 수정, 확인 후 삭제 |
+| 10 | 조회수 Top 목록 (보너스) | 상세 보기 횟수가 많은 순으로 최대 5개 출력 |
 | 0 | 종료 | 프로그램을 종료합니다. |
 
 - 잘못된 번호를 입력하면 안내 메시지를 출력하고 메뉴로 돌아갑니다.
 - 목록, 카테고리별 조회, 검색, 즐겨찾기 목록의 번호는 전체 목록 기준이라, 그 번호를 그대로 상세 보기와 즐겨찾기 관리에 사용할 수 있습니다.
-- 데이터는 실행 중에만 유지되며, 종료하면 기본 데이터로 초기화됩니다.
+- 데이터는 실행 중에만 유지되며, 종료하면 기본 데이터로 초기화됩니다. 8번 메뉴에서 직접 저장했을 때만 `data/prompts.json`에 남습니다.
+- 상세 보기(5번)를 열 때마다 해당 프롬프트의 조회수가 1 올라갑니다.
 
 ## 프롬프트 카테고리
 
@@ -60,10 +64,15 @@ prompt-manager/
 │   ├── __init__.py
 │   ├── app.py               # 메인 메뉴 루프
 │   ├── data.py              # 카테고리, 프롬프트 구조, 기본 데이터
-│   ├── features.py          # 메뉴별 기능 함수
+│   ├── features.py          # 필수 기능 함수 (추가/목록/조회/검색/상세/즐겨찾기)
+│   ├── bonus.py             # 보너스 기능 (저장 메뉴, 수정/삭제, Top 목록)
+│   ├── storage.py           # JSON 저장/불러오기, Markdown 내보내기
 │   └── ui.py                # 메뉴 출력, 입력 보조 함수
-├── tests/
-│   └── test_features.py     # unittest 기반 테스트
+├── tests/                   # unittest 기반 테스트 (12개)
+├── docs/
+│   ├── concepts.md          # Python/Git 개념 정리
+│   └── screenshots/         # 제출용 스크린샷
+├── CHECKLIST.md             # 과제 요구사항 체크리스트
 ├── .gitignore
 └── README.md
 ```
@@ -78,6 +87,7 @@ prompt-manager/
     "content": "당신은 10년 경력의 전문 블로거입니다...",
     "category": "텍스트 생성",
     "favorite": True,
+    "views": 0,  # 보너스: 상세 보기 횟수
 }
 ```
 
@@ -85,10 +95,13 @@ prompt-manager/
 
 - 기능 하나를 완성할 때마다 커밋했습니다. (feat, fix, docs, test, chore 접두어 사용)
 - `feature/prompt-list` 브랜치에서 목록 기능을 개발한 뒤 `main`으로 병합했습니다.
+- 보너스는 `feature/bonus-storage`, `feature/bonus-crud` 브랜치에서 개발해 `main`으로 병합했습니다.
+
+과제 요구사항별 충족 여부는 [CHECKLIST.md](CHECKLIST.md)에 정리했습니다.
 
 ## 제출 자료 (스크린샷)
 
-아래 이미지는 클라우드 Linux 환경의 터미널에서 실제로 실행한 출력을 캡처한 것입니다. VSCode 화면이 아니며, `git log` 이미지는 커밋 `8f6879c` 시점의 결과입니다.
+아래 이미지는 클라우드 Linux 환경의 터미널에서 실제로 실행한 출력을 캡처한 것입니다. VSCode 화면이 아니며, `git log` 이미지는 촬영 시점까지의 커밋 기록입니다.
 
 | 항목 | 파일 |
 |---|---|
@@ -97,3 +110,6 @@ prompt-manager/
 | 카테고리별 조회, 검색, 상세 보기, 즐겨찾기 | [03-run-category-search-detail-favorites.png](docs/screenshots/03-run-category-search-detail-favorites.png) |
 | `git log --oneline --graph` | [04-git-log-graph.png](docs/screenshots/04-git-log-graph.png) |
 | 원격 저장소와 브랜치 | [05-remote-branches.png](docs/screenshots/05-remote-branches.png) |
+| 공개 샘플 저장소 clone | [06-clone-sample-repo.png](docs/screenshots/06-clone-sample-repo.png) |
+| 보너스 기능 실행 | [07-run-bonus.png](docs/screenshots/07-run-bonus.png) |
+| 단위 테스트 | [08-unit-tests.png](docs/screenshots/08-unit-tests.png) |
