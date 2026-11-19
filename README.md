@@ -73,7 +73,7 @@ prompt-manager/
 │   ├── concepts.md          # Python/Git 개념 정리
 │   └── screenshots/         # 제출용 스크린샷
 ├── scripts/
-│   └── setup-windows.ps1    # Windows 개발 환경 설정 (Git 설정, VSCode 확장)
+│   └── setup-mac.sh         # macOS 개발 환경 설정 (Git 설정, VSCode 확장)
 ├── CHECKLIST.md             # 과제 요구사항 체크리스트
 ├── .gitignore
 └── README.md

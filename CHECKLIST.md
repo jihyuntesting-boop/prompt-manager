@@ -151,16 +151,16 @@
 | ✅ | 브랜치 생성 및 병합을 로컬 checkout, merge로 수행 | 스크린샷 04 |
 | ✅ | 이전 미션 프롬프트 3개 이상을 기본 데이터로 등록 | 위와 동일 (6개) |
 
-## 남은 할 일 (사용자 PC에서)
+## 남은 할 일 (사용자 맥에서)
 
-VSCode와 PC의 Git 설정은 이 클라우드 환경에서 만질 수 없어 PC에서 해야 합니다. 설치와 설정은 스크립트 한 번으로 끝나도록 준비했습니다. (Windows PowerShell, 이 환경에는 PowerShell이 없어 **스크립트는 실행해 보지 못했습니다**)
+VSCode와 PC의 Git 설정은 이 클라우드 환경에서 만질 수 없어 맥 터미널에서 해야 합니다. 설치와 설정은 스크립트 한 번으로 끝나도록 준비했습니다. (이 환경은 Linux라서 `code`가 없는 경로와 Git 설정 부분만 실행해 확인했고, VSCode 확장 설치 부분은 **실행해 보지 못했습니다**)
 
-```powershell
+```bash
 git clone https://github.com/jihyuntesting-boop/prompt-manager
 cd prompt-manager
-.\scripts\setup-windows.ps1 -Name "GitHub사용자명" -Email "GitHub에 등록한 이메일"
+bash scripts/setup-mac.sh "GitHub사용자명" "GitHub에 등록한 이메일"
 ```
 
 1. 위 스크립트로 Python 확장, Korean Language Pack 설치와 Git 사용자 정보, 기본 브랜치 설정을 한 번에 처리
 2. VSCode 왼쪽 아래 계정 아이콘에서 GitHub 로그인(브라우저 승인 필요), 로그인된 화면 캡처
-3. `python main.py` 실행 화면과 `git log --oneline --graph` 화면 캡처 (클라우드 터미널 이미지 대신 PC 화면을 내려면)
+3. `python3 main.py` 실행 화면과 `git log --oneline --graph` 화면 캡처 (클라우드 터미널 이미지 대신 맥 화면을 내려면)
